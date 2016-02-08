@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JQuery</title>
+	<script src="angular.min.js"></script>
+	<script src="jquery.min.js"></script>
+</head>
+<body>
+	<label>Descreva:</label>
+	<input type="text" id="texto">
+	<h1>A DevItz é !</h1>
+	<script>
+		$(document).ready(function(){
+			$("input").keydown(function(event){
+				$("h1").text('A DevItz é '+$(this).val()+'!');
+			});
+		});
+	</script>
+</body>
+</html>

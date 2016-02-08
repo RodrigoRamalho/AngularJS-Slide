@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="mainController">
+			<input type="text" ng-model="buscar">
+
+			<button type="button" ng-click="ver = !ver">Mostrar/Esconder</button>
+			<form ng-submit="add()" ng-show="ver">
+				<input type="text" ng-model="n" placeholder="Nome"/>
+				<input type="text" ng-model="i" placeholder="Idade"/>
+				<button type="submit">Add</button>
+			</form>
+			<ul>
+				<li ng-repeat="p in pessoas | filter: buscar">
+					{{p.nome | uppercase}} - {{p.idade | currency: "R$"}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div ng-includes="'jquery.html'"></div>
+	<script src="angular.min.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
